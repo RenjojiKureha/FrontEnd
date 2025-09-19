@@ -16,6 +16,52 @@
         console.log("Hello, " + name + "!");
         let emptyValue = null;
         console.log(emptyValue);
+
+        let age = 25;
+        if (age >= 18) {
+            console.log("You are an adult.");
+        } else {
+            console.log("You are a minor.");
+        }
+
+        let time = 12;
+        switch (time) {
+            case 10:
+                alert("Good morning!");
+                break;
+            case 12:
+                alert("Good noon!");
+                break;
+            case 18:
+                alert("Good evening!");
+                break;
+            default:
+                alert("Hello!");
+        }
+
+        for (let i = 0; i < 5; i++) {
+            console.log("Iteration " + i);
+        }
+
+        while (age < 30) {
+            console.log("Age is " + age);
+            age++;
+        }
+
+        for (let i = 0; i < 7; i++) {
+            if (i === 2) {
+                continue;
+            }
+            if (i === 4) {
+                break;
+            }
+            console.log(i);
+        }
+
+        function greet(name) {
+            return "Hello, " + name + "!";
+        }
+        
     </script>
 
 </body>
