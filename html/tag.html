@@ -10,3 +10,17 @@ html属性的基本语法
 <a href="https://www.exmple.com">这是一个超链接</a>
 属性名称不区分大小写，属性值对大小写敏感
 <img src="image.jpg" alt="示例图片">=<img SRC="image.jpg" alt="示例图片">
+
+css语法
+选择器{
+    属性名1:属性值1;
+    属性名2:属性值2;
+}
+css三种导入方式：1.内联样式 2.内部样式表 3.外部样式表
+导入方式的优先级：内联样式 > 内部样式表 > 外部样式表
+内联样式：直接在HTML标签中使用style属性定义样式
+<p style="color:red; font-size:16px;">这是一个应用了内联样式的文本</p>
+内部样式表：在HTML文档的<head>部分使用<style>标签定义样式
+外部样式表：将CSS代码放在单独的.css文件中，并通过<link>标签引入
+<head>
+    <link rel="stylesheet" href="styles.css">
