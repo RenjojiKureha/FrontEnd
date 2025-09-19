@@ -22,5 +22,10 @@ css三种导入方式：1.内联样式 2.内部样式表 3.外部样式表
 <p style="color:red; font-size:16px;">这是一个应用了内联样式的文本</p>
 内部样式表：在HTML文档的<head>部分使用<style>标签定义样式
 外部样式表：将CSS代码放在单独的.css文件中，并通过<link>标签引入
-<head>
-    <link rel="stylesheet" href="styles.css">
+
+浮动的语法
+选择器{
+    float: left; /*元素向左浮动*/
+    float: right; /*元素向右浮动*/
+    float: none; /*取消浮动，元素恢复正常流*/
+}
