@@ -6,6 +6,37 @@
     <title>js函数</title>
 </head>
 <body>
-    
+    <script>
+
+        function hello(){
+            console.log("hello function");
+        }
+        hello();
+
+        function hello_with_return(){
+            return "hello return - 返回值";
+        }
+        let result = hello_with_return();
+        console.log(result);
+        console.log(hello_with_return());
+
+        function hello_with_param(name){
+            console.log("hello " + name);
+        }
+        hello_with_param("张三");
+        hello_with_param("李四");
+
+        // 作用域
+        let global_var = "I am global variable 全局变量";
+        function local_var_function(){
+            let local_var = "I am local variable 局部变量";
+            console.log("函数内打印全局变量" + global_var);
+            console.log("函数内打印局部变量" + local_var);
+        }
+        local_var_function();
+        console.log("函数外打印全局变量" + global_var);
+        // console.log("函数外打印局部变量" + local_var); // 报错，找不到局部变量
+
+    </script>
 </body>
 </html>
