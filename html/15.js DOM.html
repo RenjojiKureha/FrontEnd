@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js DOM</title>
+</head>
+<body>
+    <div id="box1"> 这是一个id选择器标签</div>
+    <div class="box2"> 这是一个类选择器标签</div>
+    <div> 普通的div标签</div>
+
+    <button>点击按钮</button>
+
+    <script>
+        // DOM: Document Object Model 文档对象模型
+        // DOM是HTML和XML文档的编程接口。它表示页面，使程序能够改变文档的结构、样式和内容。
+        // DOM将文档表示为节点和对象的树结构。这样，编程语言就可以与页面内容进行交互。
+
+        // 1. 访问DOM元素
+        // 可以使用多种方法访问DOM元素，例如通过ID、类名、标签名等。
+        var element_Id = document.getElementById("box1");
+        console.log(element_Id);
+
+        var elements_Class = document.getElementsByClassName("box2")[0];
+        console.log(elements_Class);
+
+        var elements_Tag = document.getElementsByTagName("div")[2];
+        console.log(elements_Tag);
+       
+        // const elementByQuery = document.querySelector(".myClass");
+        // const elementsByQueryAll = document.querySelectorAll("div");
+
+        // 2. 修改DOM元素
+        // 可以修改元素的属性、样式和内容。
+        if (elements_Tag) {
+            elements_Tag.style.color = "red"; // 修改样式
+            elements_Tag.style.fontSize = "20px";
+            elements_Tag.innerHTML = "Hello, World!"; // 修改内容
+            elements_Tag.setAttribute("data-custom", "value"); // 修改属性   
+        }
+
+        element_Id.innerHTML = "<a href='#'>跳转链接</a>";
+        elements_Class.innerText = "<a href='#'>跳转链接</a>"; 
+        // 只会显示文本，不会解析为HTML
+
+        // DOM 属性绑定事件
+        var button_element = document.getElementsByTagName("button")[0];
+        console.log(button_element);
+
+        // button_element.onclick = function() {
+        //     alert("DOM 属性按键触发");
+        // }
+        
+        button_element.addEventListener("click", function() {
+            alert("addEventListener 按键触发");
+        });
+
+    </script>
+</body>
+</html>
