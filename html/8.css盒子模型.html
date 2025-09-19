@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css盒子模型</title>
+    <style>
+
+        .demo {
+            background-color: aqua; /*背景颜色*/
+            display: inline-block; /*使div表现得像span*/
+            border: 5px solid blue; /*边框*/
+            /* 实线solid 虚线dashed 点线dotted 双实线double */
+            padding: 50px; /*内边距*/
+            margin: 20px; /*外边距*/
+        }
+
+        .border-demo {
+            background-color: coral;
+            width: 200px; /*宽度*/
+            height: 100px; /*高度*/
+            border-style: solid dashed dotted double; /*边框样式*/
+            border-width: 10px 30px 20px 40px; /*边框宽度*/
+            border-color: blueviolet; /*边框颜色*/
+        }
+
+    </style>
+</head>
+<body>
+    <div class="demo">盒子模型demo</div>
+    <div class="border-demo">这是一个边框示例</div>
+</body>
+</html>
