@@ -4,8 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
 </head>
 <body>
-    
+    <div>
+        红的
+    </div>
+
+    <script>
+        // 1.获取div标签（元素）
+        let box = document.querySelector('div');
+        // 2.修改div标签（元素）的内容 box是对象 innerText是属性
+        // 对象.属性 = '新的值' 不识别标签
+        box.innerText = '我是一个盒子';
+        box.innerText = '<strong>我是一个盒子</strong>'; // 只是修改文本内容
+        // 3.innerHTML 解析标签
+        box.innerHTML = '<strong>我是一个盒子</strong>'; // 识别标签
+    </script>
 </body>
 </html>
