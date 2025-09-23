@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html,body{
+            height: 100%;
+        }
+        ul li{
+            overflow: hidden;
+            height: 150px;
+        }
+        ul li img{
+            width: 80px;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <h1>懒加载</h1>
+    <ul id="list">
+        
+    </ul>
+    <script>
+
+        //模拟后端数据
+        var arr1 = [{
+            name:"这是第一个名字",
+            url:"https://images.pexels.com/photos/17349967/pexels-photo-17349967.jpeg?cs=srgb&dl=pexels-andrew-haimerl-17349967.jpg&fm=jpg"
+        },{
+            name:"这是第二个名字",
+            url:"https://images.pexels.com/photos/17349967/pexels-photo-17349967.jpeg?cs=srgb&dl=pexels-andrew-haimerl-17349967.jpg&fm=jpg"
+        },{
+            name:"这是第三个名字",
+            url:"https://images.pexels.com/photos/17349967/pexels-photo-17349967.jpeg?cs=srgb&dl=pexels-andrew-haimerl-17349967.jpg&fm=jpg"
+        },{
+            name:"这是第四个名字",
+            url:"https://images.pexels.com/photos/17349967/pexels-photo-17349967.jpeg?cs=srgb&dl=pexels-andrew-haimerl-17349967.jpg&fm=jpg"
+        },{
+            name:"这是第五个名字",
+            url:"https://images.pexels.com/photos/17349967/pexels-photo-17349967.jpeg?cs=srgb&dl=pexels-andrew-haimerl-17349967.jpg&fm=jpg"
+        }];
+        var arr2 = [{
+            name:"这是第六个名字",
+            url:"https://images.pexels.com/photos/17349967/pexels-photo-17349967.jpeg?cs=srgb&dl=pexels-andrew-haimerl-17349967.jpg&fm=jpg"
+        },{
+            name:"这是第七个名字",
+            url:"https://images.pexels.com/photos/17349967/pexels-photo-17349967.jpeg?cs=srgb&dl=pexels-andrew-haimerl-17349967.jpg&fm=jpg"
+        },{
+            name:"这是第八个名字",
+            url:"https://images.pexels.com/photos/17349967/pexels-photo-17349967.jpeg?cs=srgb&dl=pexels-andrew-haimerl-17349967.jpg&fm=jpg"
+        },{
+            name:"这是第九个名字",
+            url:"https://images.pexels.com/photos/17349967/pexels-photo-17349967.jpeg?cs=srgb&dl=pexels-andrew-haimerl-17349967.jpg&fm=jpg"
+        },{
+            name:"这是第十个名字",
+            url:"https://images.pexels.com/photos/17349967/pexels-photo-17349967.jpeg?cs=srgb&dl=pexels-andrew-haimerl-17349967.jpg&fm=jpg"
+        }];
+
+        renderHTML(arr1);
+
+        function renderHTML(arr){
+            // list.innerHTML += arr.map(function(item){
+            //     return `<li>
+            //         <img src="${item.url}" alt="">
+            //         <h3>${item.name}</h3>
+            //     </li>`;
+            // }).join("");
+
+            for(var i=0;i<arr.length;i++){
+                var oli = document.createElement("li");
+                oli.innerHTML = `<img src="${arr[i].url}" alt="">
+                    <h3>${arr[i].name}</h3>`;
+
+                list.appendChild(oli);
+            }
+        }
+
+        isLoading = false; //是否正在加载
+
+        window.onscroll = function(){
+            // console.log("滚动了");
+            // console.log(document.documentElement.scrollTop || document.body.scrollTop);
+            // console.log(document.documentElement.clientHeight);
+            // console.log(document.documentElement.scrollHeight);
+            var listHeight = list.offsetHeight;
+            var listTop = list.offsetTop;
+
+            // console.log(listHeight,listTop);
+
+            var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+            var windowHeight = document.documentElement.clientHeight;
+
+            // console.log(Math.round(scrollTop+windowHeight));
+            if(isLoading) return; //正在加载，直接返回
+            if((listHeight + listTop) - Math.round(scrollTop+windowHeight) <10 ){
+                console.log("加载更多");
+                isLoading = true;
+                
+                // 渲染下一页数据
+                setTimeout(function(){
+                    renderHTML(arr2);
+                    isLoading = false;//下一次到底事件继续触发
+                },1000);
+            }
+
+
+
+
+
+        }
+
+    </script>
+</body>
+</html>
