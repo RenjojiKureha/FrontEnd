@@ -1,0 +1,2 @@
+scripts可以配置你想要的执行
+有dependencies，执行npm install
