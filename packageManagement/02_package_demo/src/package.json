@@ -1,7 +1,0 @@
-{
-    "name": "project_demo_01",
-    "version": "1.0.0",
-    "dependencies": {
-        "dayjs": "^1.11.18"
-    }
-}
