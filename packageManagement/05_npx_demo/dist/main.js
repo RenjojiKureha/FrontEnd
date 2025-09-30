@@ -1,0 +1,1 @@
+(()=>{const o=hello-world-npm-package;function n(o,n){return o+n}function l(o){console.log(o.length)}console.log(o),n(2,3),n(4,5),l(o),l("test")})();

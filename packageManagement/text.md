@@ -6,3 +6,6 @@ ctrl c停止命令行
 全局安装npm install 'name' -g
 默认安装开发和生产依赖（dependencies），开发依赖（devD）--save-dev/-D
 关于yarn：yarn init | yarn add 'name' | 
+安装具体版本npm i 'name'@x.y.z 
+npx优先当前目录下查找 npx 'name' --varsion
+当前目录下执行npx webpack
