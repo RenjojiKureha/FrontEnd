@@ -9,3 +9,4 @@ ctrl c停止命令行
 安装具体版本npm i 'name'@x.y.z 
 npx优先当前目录下查找 npx 'name' --varsion
 当前目录下执行npx webpack
+x.y.z x大改 y删改功能 z改bug
