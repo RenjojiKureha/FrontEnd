@@ -1,0 +1,12 @@
+{
+  "name": "why_utils_001",
+  "version": "1.0.0",
+  "description": "这是一个描述",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["utils", "math", "format","这是一个关键词"],
+  "author": "不是我",
+  "license": "ISC"
+}
