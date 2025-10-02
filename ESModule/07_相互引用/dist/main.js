@@ -1,0 +1,1 @@
+//模拟npx webpack生成文件
