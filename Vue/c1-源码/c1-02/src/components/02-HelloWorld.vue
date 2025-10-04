@@ -19,6 +19,8 @@ export default{
 
 <template>
 
+    <h3>属性绑定</h3>
+
     <div class="{{ dynamicClass }}">双大括号不能用于属性赋值</div>
 
     <div v-bind:class="dynamicClass" v-bind:id="dynamicId" v-bind:title="dynamicTitle">要使用v-bind:属性</div>
