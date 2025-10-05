@@ -6,17 +6,23 @@ import listDemo from './components/04-list.vue';
 import keyDemo from './components/05-key.vue';
 import eventDemo1 from './components/06-event1.vue';
 import eventDemo2 from './components/06-event2.vue';
+import eventDemo3 from './components/07-event3.vue';
+import eventDemo4 from './components/07-event4.vue';
+import eventDemo5 from './components/07-event5.vue';
 
 </script>
 
 <template>
 
-  <!-- <HelloWorld/>
-  <ifDemo/>
-  <listDemo/>
-  <keyDemo/> -->
-  <eventDemo1/>
-  <eventDemo2/>
+  <!-- <HelloWorld/> -->
+  <!-- <ifDemo/> -->
+  <!-- <listDemo/> -->
+  <!-- <keyDemo/> -->
+  <!-- <eventDemo1/> -->
+  <!-- <eventDemo2/> -->
+  <eventDemo3/>
+  <eventDemo4/>
+  <eventDemo5/>
 
 </template>
 
