@@ -14,6 +14,7 @@ import arrayList from './components/09-arrayList.vue';
 import computed from './components/10-computed.vue';
 import classDemo from './components/11-class.vue';
 import stlyeDemo from './components/12-style.vue';
+import WatchDemo from './components/13-watch.vue';
 
 </script>
 
@@ -32,7 +33,8 @@ import stlyeDemo from './components/12-style.vue';
   <!-- <arrayListDemo/> -->
   <!-- <computedDemo/> -->
   <!-- <classDemo/> -->
-  <stlyeDemo/>
+  <!-- <stlyeDemo/> -->
+  <watchDemo/>
 
 </template>
 
