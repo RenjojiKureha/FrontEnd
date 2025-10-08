@@ -11,6 +11,7 @@ import eventDemo4 from './components/07-event4.vue';
 import eventDemo5 from './components/07-event5.vue';
 import eventDemo6 from './components/08-event6.vue';
 import arrayList from './components/09-arrayList.vue';
+import computed from './components/10-computed.vue';
 
 
 </script>
@@ -27,7 +28,8 @@ import arrayList from './components/09-arrayList.vue';
   <!-- <eventDemo4/> -->
   <!-- <eventDemo5/> -->
   <!-- <eventDemo6/> -->
-  <arrayList/>
+  <!-- <arrayList/> -->
+  <computed/>
 
 </template>
 
