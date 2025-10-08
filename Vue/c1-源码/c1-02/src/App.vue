@@ -13,6 +13,7 @@ import eventDemo6 from './components/08-event6.vue';
 import arrayList from './components/09-arrayList.vue';
 import computed from './components/10-computed.vue';
 import classDemo from './components/11-class.vue';
+import stlyeDemo from './components/12-style.vue';
 
 </script>
 
@@ -28,9 +29,10 @@ import classDemo from './components/11-class.vue';
   <!-- <eventDemo4/> -->
   <!-- <eventDemo5/> -->
   <!-- <eventDemo6/> -->
-  <!-- <arrayList/> -->
-  <!-- <computed/> -->
-   <classDemo />
+  <!-- <arrayListDemo/> -->
+  <!-- <computedDemo/> -->
+  <!-- <classDemo/> -->
+  <stlyeDemo/>
 
 </template>
 
