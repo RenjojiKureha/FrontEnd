@@ -16,6 +16,7 @@ import classDemo from './components/11-class.vue';
 import stlyeDemo from './components/12-style.vue';
 import WatchDemo from './components/13-watch.vue';
 import modelDemo from './components/14-model.vue';
+import refDemo from './components/15-ref.vue';
 
 
 </script>
@@ -37,7 +38,8 @@ import modelDemo from './components/14-model.vue';
   <!-- <classDemo/> -->
   <!-- <stlyeDemo/> -->
   <!-- <watchDemo/> -->
-  <modelDemo/>
+  <!-- <modelDemo/> -->
+  <refDemo/>
 
 </template>
 
