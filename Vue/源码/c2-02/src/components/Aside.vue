@@ -1,10 +1,10 @@
 <script>
 
-import item from './item.vue';
+import item from './Item.vue';
 
 export default {
     components:{
-        item
+        item,
     }    
 }
 
