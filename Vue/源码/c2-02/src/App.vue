@@ -4,14 +4,16 @@
 // import Header from './components/Header.vue';
 // import Main from './components/Main.vue';
 // import Aside from './components/Aside.vue';
-import parent from './transportData/parent.vue';
+// import parent from './transportData/parent.vue';
+import ComponentA from './transportData/componentA.vue';
 
 export default {
   components:{
     // Header,
     // Main,
     // Aside,
-    parent
+    // parent,
+    ComponentA,
   }
 }
 
@@ -26,6 +28,7 @@ export default {
   <!-- <Header/>
   <Main/>
   <Aside/> -->
-  <parent/>
+  <!-- <parent/> -->
+  <ComponentA/>
 
 </template>
