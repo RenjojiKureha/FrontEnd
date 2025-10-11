@@ -4,6 +4,12 @@ export default {
     data(){
         return {
             message: '动态数据',
+            age: 18,
+            names:["灵感菇","凑企鹅","Doro狗"],
+            userInfo:{
+                name:'张三',
+                age:20
+            }
         }
     },
     components:{
@@ -14,7 +20,8 @@ export default {
 
 <template>
     <h3>parent</h3>
-    <child title="parent数据" demo="测试" :pData="message"/>
+    <child title="parent数据" demo="测试" :pData="message" :age="age" :names="names" :userInfo="userInfo"/>
+    
 </template>
 
 <!-- 数据只能母级传子级，不能子级传母级，子级也不能传子级 -->
