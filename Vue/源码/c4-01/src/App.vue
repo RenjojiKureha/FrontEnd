@@ -10,7 +10,14 @@
 import myComponent from "./components/myComponent.vue"; 
 import userComponent from "./components/userComponent.vue";
 import componentA from "./components/componentA.vue";
-import componentB from "./components/componentB.vue";
+// import componentB from "./components/componentB.vue";
+
+// 异步加载组件
+import { defineAsyncComponent } from "vue";
+const componentB = defineAsyncComponent(() =>
+  import("./components/componentB.vue")
+);
+
 export default {
   components: {
     myComponent,

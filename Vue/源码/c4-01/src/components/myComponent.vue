@@ -5,8 +5,6 @@
 </template>
 
 <script>
-import { mergeAlias } from 'vite';
-
 
 // 生命周期函数
 // 创建期：beforeCreate created
