@@ -22,5 +22,15 @@ export default{
             console.log('oldVal',oldVal);
         }
     },
+    created(){
+        console.log('创建了 optCpnt');
+    },
+    mounted(){
+        console.log('渲染了 optCpnt1');
+    },
+    // 第二个生命周期函数覆盖了第一个
+    mounted(){
+        console.log('渲染了 optCpnt2');
+    }
 }
 </script>

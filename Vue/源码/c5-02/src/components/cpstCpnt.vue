@@ -6,7 +6,7 @@
 
 <script setup>
 
-import { ref, watch } from 'vue'
+import { ref, watch, onMounted, onBeforeMount, onBeforeUpdate, onUpdated } from 'vue'
 import { watchCount } from '../utils/countUtil.js'
 
 const count = ref(0)
@@ -25,5 +25,13 @@ function add(e){
 // })
 // 优势是可提取到独立文件中使用
 watchCount(count)
+
+// 每个生命周期函数方法，都可以独立的处理一个业务
+onMounted(()=>{
+    console.log('渲染了 cpstCpnt1');
+})
+onMounted(()=>{
+    console.log('渲染了 cpstCpnt2');
+})
 
 </script>
