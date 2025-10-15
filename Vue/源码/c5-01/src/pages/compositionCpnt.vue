@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import { ref, reactive } from 'vue'
+import { ref, reactive, computed} from 'vue'
 // 优势：组合式和选项式可以共存
 // 但不建议混用
 export default {
