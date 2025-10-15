@@ -1,17 +1,23 @@
 <template>
-  <optCpnt/>
+  <!-- <optCpnt/>
   <cpstCpnt/>
   <optRef/>
-  <cpstRef/>
+  <cpstRef/> -->
+  <parentOpt/>
+  <parentCpst/>
+
 </template>
 
 <script>
 
-import optCpnt from './components/optCpnt.vue'
-import cpstCpnt from './components/cpstCpnt.vue'
+import optCpnt from './components/optCpnt.vue';
+import cpstCpnt from './components/cpstCpnt.vue';
 
 import optRef from './components/optRef.vue';
 import cpstRef from './components/cpstRef.vue';
+
+import parentOpt from './pages/options/parent.vue';
+import parentCpst from './pages/composition/parent.vue';
 
 export default {
   name: 'App',
@@ -19,7 +25,9 @@ export default {
     optCpnt,
     cpstCpnt,
     optRef,
-    cpstRef
+    cpstRef,
+    parentOpt,
+    parentCpst
   }
 }
 </script>
