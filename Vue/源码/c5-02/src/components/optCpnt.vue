@@ -16,5 +16,11 @@ export default{
             this.count++
         }
     },
+    watch:{
+        count(newVal,oldVal){
+            console.log('newVal',newVal);
+            console.log('oldVal',oldVal);
+        }
+    },
 }
 </script>
