@@ -1,11 +1,15 @@
-<script setup></script>
-
 <template>
-  <h1>You did it!</h1>
-  <p>
-    Visit <a href="https://vuejs.org/" target="_blank" rel="noopener">vuejs.org</a> to read the
-    documentation
-  </p>
+  <directiveScoped/>
+  <p v-blue>用全局自定义方法变蓝</p>
 </template>
+
+<script>
+import directiveScoped from './components/directiveScoped.vue';
+export default {
+  components:{
+    directiveScoped,
+  }
+}
+</script>
 
 <style scoped></style>
