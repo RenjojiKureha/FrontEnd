@@ -6,7 +6,7 @@
             <input type="checkbox" :id="'checkbox-' + logData.id" :checked="logData.checked" @change="onCheckChange">
             <label :for="'checkbox-' + logData.id">{{ statusText }}</label>
         </div>
-        <!-- <p>{{ message }}</p> -->
+        <button @click="onDelete" class="delete-btn">删除</button>
     </div>
 </template>
 
@@ -18,27 +18,27 @@ export default {
             required: true
         }
     },
-    // 4. 添加 computed 选项
     computed: {
-        // 这个计算属性会根据 logData.checked 的变化自动更新
         statusText() {
             return this.logData.checked ? '已完成' : '未完成';
         }
     },
     methods: {
-        // 当时间变化时，发出 update 事件
+        // 发送更新时间
         onTimeChange(event) {
             this.$emit('update', { ...this.logData, time: event.target.value });
         },
-        // 当内容变化时，发出 update 事件
+        // 发送更新内容
         onDoingChange(event) {
             this.$emit('update', { ...this.logData, doing: event.target.value });
         },
-        // 3. 当复选框状态变化时，发出 update 事件
+        // 发送更新checked
         onCheckChange(event) {
-            // 将包含新 checked 值的完整 log 对象发送给父组件
             this.$emit('update', { ...this.logData, checked: event.target.checked });
         },
+        onDelete() {
+            this.$emit('delete', this.logData.id);
+        }
     },
 };
 </script>
@@ -69,5 +69,14 @@ export default {
     /* display: inline-block;
     border: 1px solid #999; */
     box-sizing: border-box;
+}
+.delete-btn {
+  background: #dc3545;
+  color: white;
+  border: none;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 10px;
 }
 </style>

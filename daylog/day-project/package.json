@@ -12,9 +12,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "axios": "^1.12.2",
     "v-calendar": "^3.1.2",
     "vue": "^3.5.22",
-    "vue-calendar-component": "^2.8.2"
+    "vue-calendar-component": "^2.8.2",
+    "vue-router": "^4.6.3"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^6.0.1",

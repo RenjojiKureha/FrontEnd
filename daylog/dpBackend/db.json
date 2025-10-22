@@ -1,0 +1,31 @@
+{
+  "users": [
+    {
+      "id": "1761148124290sqlahhnmm",
+      "username": "123",
+      "email": "2271959422@qq.com",
+      "password": "$2a$10$nfMAupxism7ksMxvM9NCuOSm7dDhPXoV43PtjlP9cukM/ZIUpg1t6",
+      "createdAt": "2025-10-22T15:48:44.290Z"
+    }
+  ],
+  "logs": [
+    {
+      "id": "1761150858119zbig6q5g0",
+      "userId": "1761148124290sqlahhnmm",
+      "date": "2025-10-23",
+      "time": "06:40",
+      "doing": "新任务...",
+      "checked": false,
+      "createdAt": "2025-10-22T16:34:18.119Z"
+    },
+    {
+      "id": "1761150861260pg46clo66",
+      "userId": "1761148124290sqlahhnmm",
+      "date": "2025-10-23",
+      "time": "16:34",
+      "doing": "新任务...",
+      "checked": false,
+      "createdAt": "2025-10-22T16:34:21.260Z"
+    }
+  ]
+}

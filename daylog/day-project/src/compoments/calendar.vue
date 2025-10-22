@@ -1,28 +1,27 @@
 <script setup>
-// 1. 导入 computed
+
 import { computed } from 'vue'
 
-// 2. 定义组件要接收的 props 和要触发的 emits
+// 双向绑定app的selectDate
 const props = defineProps({
-  modelValue: Date // v-model 默认绑定的 prop 是 modelValue
-  
+  // 双绑默认属性名modelValue
+  modelValue: Date 
 })
+// 双绑声明一个用于更新 modelValue 的事件
+const emit = defineEmits(['update:modelValue']) 
 
-
-
-const emit = defineEmits(['update:modelValue']) // v-model 默认触发的事件
-
-// 3. 创建一个可写的计算属性，作为父子组件之间的桥梁
+// 用计算属性处理传来的数据
 const date = computed({
-  // get() 函数：当组件需要读取日期时，它会从父组件传入的 prop 中获取
+  // 拿到这个传进来的日期
   get() {
     return props.modelValue
   },
-  // set() 函数：当 v-date-picker 尝试更新日期时，它会触发 emit，通知父组件更新
+  // v-date-picker更新日期的时候，emit给双亲组件新的值
   set(value) {
     emit('update:modelValue', value)
   }
 })
+
 </script>
 
 <template>
