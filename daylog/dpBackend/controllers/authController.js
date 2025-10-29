@@ -70,7 +70,9 @@ export const register = async (ctx) => {
 export const login = async (ctx) => {
   try {
     const { email, password } = ctx.request.body;
-    
+
+    console.log(ctx.request.body);
+
     if (!email || !password) {
       ctx.status = 400;
       ctx.body = { error: 'Email and password are required' };
@@ -81,6 +83,22 @@ export const login = async (ctx) => {
     
     // 查找用户
     const user = db.users.find(u => u.email === email);
+
+    // 箭头函数的原始写法
+    // const user = db.users.find((u)=>{
+    //   return u.email === email
+    // });
+    
+    // 传统等价写法
+    // for (let index = 0; index < db.users.length; index++) {
+    //   const element = db.users[index];
+    //   if(element.email === email){
+    //     user = element
+    //     break;
+    //   }
+    // }
+
+
     if (!user) {
       ctx.status = 401;
       ctx.body = { error: 'Invalid credentials' };

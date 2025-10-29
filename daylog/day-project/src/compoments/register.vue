@@ -42,18 +42,24 @@ const form = ref({
 
 const handleRegister = async () => {
   try {
+    // 和登录一样，先是注册态，err默认空
     loading.value = true
     error.value = ''
     
+    // 调用注册接口 返回注册凭证。
     const response = await api.post('/register', form.value)
-    
+
+    // 存硬盘里
     localStorage.setItem('token', response.data.token)
     localStorage.setItem('user', JSON.stringify(response.data.user))
     
+    // 跳转页面到app.vue
     router.push('/')
+
   } catch (err) {
     error.value = err.response?.data?.error || '注册失败'
   } finally {
+    // 结束注册态
     loading.value = false
   }
 }

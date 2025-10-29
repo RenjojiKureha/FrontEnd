@@ -37,14 +37,16 @@ const form = ref({
 
 const handleLogin = async () => {
   try {
-    loading.value = true
-    error.value = ''
-    
-    const response = await api.post('/login', form.value)
-    
+    loading.value = true //0us
+    error.value = ''//2-10us
+    //预期行为: 调用登录接口 返回登陆凭证。
+    const response = await api.post('/login', form.value)//100ms-500ms
+    console.log(response);
+    //内存中的指令是微秒级的，硬盘操作是毫秒级的
     localStorage.setItem('token', response.data.token)
+    localStorage.setItem('test', 'hello')
     localStorage.setItem('user', JSON.stringify(response.data.user))
-    
+    //跳转是数百毫秒的
     router.push('/')
   } catch (err) {
     error.value = err.response?.data?.error || '登录失败'

@@ -48,78 +48,98 @@ export default {
         return logs.value // 选择返回的logs组件
             .filter(log => log.date === dateStr) // .filter过滤：指针只留下所选那天的
             .sort((a, b) => a.time.localeCompare(b.time)); // .sort排序：按时间
-    })
+      })
 
-    // 获取所有日志
-    const fetchLogs = async () => {
-      try {
-        const response = await api.get('/logs');
-        logs.value = response.data;
-      } catch (error) {
-        console.error('Failed to fetch logs:', error);
-      }
-    }
-
-    // 更新一个日志
-    const updateLog = async (updatedLog) => {
-      try {
-        await api.put(`/logs/${updatedLog.id}`, updatedLog);
-        // 更新本地数据以立即响应
-        const index = logs.value.findIndex(log => log.id === updatedLog.id);
-        if (index !== -1) {
-          logs.value.splice(index, 1, updatedLog);
+      // 获取所有日志
+      const fetchLogs = async () => {
+        try {
+          // 等后端的logs拿过来
+          const response = await api.get('/logs');
+          // 把拿到的logs赋值给前端的logs
+          logs.value = response.data;
+        } catch (error) {
+          console.error('Failed to fetch logs:', error);
         }
-      } catch (error) {
-        console.error('Failed to update log:', error);
       }
-    }
 
-    // 删除日志
-    const deleteLog = async (logId) => {
-      try {
-        await api.delete(`/logs/${logId}`);
-        logs.value = logs.value.filter(log => log.id !== logId);
-      } catch (error) {
-        console.error('Failed to delete log:', error);
+      // 更新一个日志
+      const updateLog = async (updatedLog) => {
+        try {
+          // 要改的id发给后端，调用后面这个
+          await api.put(`/logs/${updatedLog.id}`, updatedLog);
+
+          // 找到对应log 赋给index
+          const index = logs.value.findIndex(log => log.id === updatedLog.id);
+
+          // 对应log存在，则index不等于-1，用更新后的覆盖掉原来的
+          if (index !== -1) {
+            logs.value.splice(index, 1, updatedLog);
+          }
+        } catch (error) {
+          console.error('Failed to update log:', error);
+        }
       }
-    }
 
-    // 添加一个新日志
-    const addListHandle = async () => {
-      const now = new Date();
-      const hours = String(now.getHours()).padStart(2, '0');
-      const minutes = String(now.getMinutes()).padStart(2, '0');
-      const currentTime = `${hours}:${minutes}`;
-      
-      const newLog = {
-        date: formatDate(props.selectedDate),// 添加日期字段
-        time: currentTime, 
-        doing: '新任务...', 
-        checked: false 
-      };
+      // 删除日志
+      const deleteLog = async (logId) => {
+        try {
+          // 把要删的id发给后端
+          await api.delete(`/logs/${logId}`);
 
-      try {
-        // 获取包含新 id 的日志
-        const response = await api.post('/logs', newLog); 
-        // 将服务器返回的完整对象添加到数组
-        logs.value.push(response.data);
-      } catch (error) {
-        console.error('Failed to create log:', error);
+          // 过滤掉被删的log
+          logs.value = logs.value.filter(log => log.id !== logId);
+        } catch (error) {
+          console.error('Failed to delete log:', error);
+        }
       }
-    }
 
-    // 在组件创建时，从服务器获取初始数据
-    onMounted(() => {
-      fetchLogs();
-    })
+      // 添加一个新日志
+      const addListHandle = async () => {
 
-    return {
-      sortedLogs,
-      updateLog,
-      deleteLog,
-      addListHandle
-    }
-  },       
+        // 先获取当前日期对象
+        const now = new Date();
+
+        // 格式化小时
+        const hours = String(now.getHours()).padStart(2, '0');
+
+        // 格式化分钟
+        const minutes = String(now.getMinutes()).padStart(2, '0');
+
+        // 拼起来赋给currentTime
+        const currentTime = `${hours}:${minutes}`;
+        
+        // 新log初始化赋值
+        const newLog = {
+          date: formatDate(props.selectedDate),// 添加日期字段
+          time: currentTime, 
+          doing: '新任务...', 
+          checked: false 
+        };
+
+        try {
+          // 等待后端创建新log赋给response
+          const response = await api.post('/logs', newLog);
+
+          // 给前端的logs push新log
+          logs.value.push(response.data);
+
+        } catch (error) {
+          console.error('Failed to create log:', error);
+        }
+      }
+
+      // 在组件创建时，从服务器获取初始数据
+      onMounted(() => {
+        fetchLogs();
+      })
+
+      return {
+        sortedLogs,
+        updateLog,
+        deleteLog,
+        addListHandle
+      }
+    },       
 }
 </script>
 

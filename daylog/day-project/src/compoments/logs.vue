@@ -7,6 +7,7 @@
             <label :for="'checkbox-' + logData.id">{{ statusText }}</label>
         </div>
         <button @click="onDelete" class="delete-btn">删除</button>
+        <!-- 删除可以再美化 -->
     </div>
 </template>
 
