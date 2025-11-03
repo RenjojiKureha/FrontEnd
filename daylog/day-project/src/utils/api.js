@@ -1,9 +1,8 @@
 import axios from 'axios'
 
-const API_BASE_URL = 'http://localhost:3000/api'
-
+// 相对路径，部署在同源下时直接调用 /api/xxx
 const api = axios.create({
-  baseURL: API_BASE_URL
+  baseURL: '/api'
 })
 
 // 请求拦截器，自动添加 token
