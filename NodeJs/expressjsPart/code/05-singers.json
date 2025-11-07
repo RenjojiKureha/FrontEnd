@@ -1,0 +1,29 @@
+{
+    "singers": [
+        {
+        "id": 1,
+        "name": "Adele",
+        "genre": "Pop"
+        },
+        {
+        "id": 2,
+        "name": "Bruno Mars",
+        "genre": "Pop"
+        },
+        {
+        "id": 3,
+        "name": "Taylor Swift",
+        "genre": "Country/Pop"
+        },
+        {
+        "id": 4,
+        "name": "Ed Sheeran",
+        "genre": "Pop"
+        },
+        {
+        "id": 5,
+        "name": "Beyoncé",
+        "genre": "R&B/Pop"
+        }
+    ]
+}
